@@ -31,6 +31,9 @@ jobs:
               distribution: 'adopt' 
       #finally build your app with the latest command
       - name: Build and test with Maven
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         #run: mvn clean verify --file ./APIBack/simple-api-main/simple-api-main/simple-api #chemin de POM.xml, la ou on execute la commande
         run: mvn -B verify sonar:sonar -Dsonar.projectKey=key_idwesdevops -Dsonar.organization=idwes-devops-cpe-2022 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{secrets.SONAR_TOKEN }} --file ./APIBack/simple-api-main/simple-api-main/simple-api/pom.xml
 
