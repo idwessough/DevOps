@@ -1,0 +1,12 @@
+---
+# tasks file for roles/proxy
+
+- name: Run proxy
+  docker_container: 
+    name: proxy
+    image: idwes/idwes-myapache
+    state: started
+    ports :
+      - 80:80
+    networks:
+      - name: app-network

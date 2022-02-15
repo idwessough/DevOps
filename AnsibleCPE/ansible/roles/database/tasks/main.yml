@@ -1,0 +1,13 @@
+--- 
+# tasks file for roles/database
+- name: Run DATABASE
+  docker_container:
+    name: idwes-postgres
+    image: idwes/idwes-postgres
+    state: started
+    env:
+      POSTGRES_DB: db
+      POSTGRES_USR: usr
+      POSTGRES_PASSWORD: pwd
+    networks:
+      - name: app-network
