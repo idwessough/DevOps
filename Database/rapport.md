@@ -58,3 +58,6 @@ idwes@LAPTOP-61C5CBJS:~/DockerCPE/TP01/APIBack/simple-api-main/simple-api-main/s
 
 HTTPServer :$
 idwes@LAPTOP-61C5CBJS:~/DockerCPE/TP01/HTTPServer$ docker build -t idwes-apache .
+
+Concernant la partie Ansible (validée) le code est en cours de récupération sur mon ordinateur afin de l'ajouter dans le repo avant minuit.
+
